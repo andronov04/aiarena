@@ -1,0 +1,24 @@
+import {
+  DEFAULTS_SORT_MODELS,
+  DEFAULTS_DATA_MODELS,
+  DEFAULTS_SYSTEM_INSTRUCTION_WEB,
+} from "@/lib/defaults";
+
+export const ORIGINAL_WINDOW_WIDTH = 1512;
+export const ORIGINAL_WINDOW_HEIGHT = 982;
+
+export const URL_LOGO_PROVIDER =
+  process.env.NEXT_PUBLIC_URL_LOGO_PROVIDER || "https://models.dev/logos/";
+
+export const SYSTEM_INSTRUCTION_WEB =
+  process.env.NEXT_PUBLIC_SYSTEM_INSTRUCTION_WEB ||
+  DEFAULTS_SYSTEM_INSTRUCTION_WEB;
+
+export const SORT_MODELS =
+  process.env.NEXT_PUBLIC_SORT_MODELS?.split(",") || DEFAULTS_SORT_MODELS;
+
+export const DEFAULTS_MODELS =
+  process.env.NEXT_PUBLIC_DEFAULTS_DATA_MODELS || DEFAULTS_DATA_MODELS;
+
+export const DISABLE_EXAMPLES =
+  process.env.NEXT_PUBLIC_DISABLE_EXAMPLES === "true";

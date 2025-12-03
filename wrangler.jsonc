@@ -1,0 +1,67 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "main": ".open-next/worker.js",
+  "name": "jfive-arena",
+  "compatibility_date": "2025-03-01",
+  "compatibility_flags": [
+    "nodejs_compat",
+    "global_fetch_strictly_public"
+  ],
+  "keep_names": false,
+  "placement": { "mode": "smart" },
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+  "observability": {
+    "enabled": true
+  },
+
+  "services": [
+    {
+      "binding": "WORKER_SELF_REFERENCE",
+      "service": "jfive-arena"
+    }
+  ],
+  "r2_buckets": [
+    {
+      "binding": "NEXT_INC_CACHE_R2_BUCKET",
+      "bucket_name": "jfive-arena-r2-bucket"
+    }
+  ],
+  "d1_databases": [
+  ],
+
+  "hyperdrive": [
+  ],
+
+  "env": {
+    "staging": {
+      "name": "jfive-arena-staging",
+
+      "services": [
+        {
+          "binding": "WORKER_SELF_REFERENCE",
+          "service": "jfive-arena-staging"
+        }
+      ],
+      "assets": {
+        "directory": ".open-next/assets",
+        "binding": "ASSETS"
+      },
+      "placement": { "mode": "smart" },
+
+      "r2_buckets": [
+        {
+          "binding": "NEXT_INC_CACHE_R2_BUCKET",
+          "bucket_name": "jfive-arena-staging-r2"
+        }
+      ],
+      "d1_databases": [
+      ],
+
+      "hyperdrive": [
+      ]
+    }
+  }
+}
