@@ -3,6 +3,7 @@
   {
     "id":"1cf0bc54-6c2f-417c-8763-ddb7da95ca00",
     "title":"Cycling Pelican",
+    "mode": "svg",
     "input":"Generate an SVG of a pelican riding a bicycle,no text,no libraries",
     "items":[
       {
@@ -100,6 +101,7 @@
   {
     "id": "b4d280ea-eeb5-4be7-8319-09d93960500d",
     "title": "Perlin cosmic glow",
+    "mode": "p5js",
     "input": "You are an expert P5.js developer with expertise in generative art, mathematics (vector fields, Perlin noise), and aesthetic design. Create a visually stunning, interactive particle flow field sketch that mimics ethereal, fluid dynamics with glowing trails and cosmic vibes.",
     "items": [
       {
@@ -178,6 +180,7 @@
   {
     "id": "1cf0bc54-6c2f-517c-8763-ddb7da95ca00",
     "title": "Fireworks",
+    "mode": "web",
     "input": "A fully automatic, realistic fireworks animation, no libraries, no text, no clicks",
     "items": [
       {

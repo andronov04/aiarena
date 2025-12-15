@@ -16,3 +16,5 @@ export interface ModelGeneration {
   endTime?: number;
   duration?: number;
 }
+
+export type ArenaMode = "web" | "canvas" | "svg" | "threejs" | "p5js";

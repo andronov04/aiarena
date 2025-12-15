@@ -2,6 +2,7 @@ import { createStore } from "zustand/vanilla";
 import { persist, createJSONStorage } from "zustand/middleware";
 import { Model, Provider } from "@/lib/schemas/models";
 import { ExampleGeneration } from "@/types/example";
+import { ArenaMode } from "@/types/generation";
 
 type ModalState =
   | {
@@ -14,6 +15,9 @@ export type AppState = {
   providers: Provider[];
   models: Model[];
   examples: ExampleGeneration[];
+
+  mode: ArenaMode;
+  setMode: (mode: ArenaMode) => void;
 
   modalState: ModalState;
   setModalState: (modalState: ModalState) => void;
@@ -42,6 +46,9 @@ export const defaultInitState: AppState = {
   providers: [],
   models: [],
   examples: [],
+
+  mode: "web",
+  setMode: () => undefined,
 
   modalState: undefined,
   setModalState: () => undefined,
@@ -153,6 +160,11 @@ export const createAppStore = (init?: Partial<AppState>) =>
         getModelById: (mid: string) => {
           return get().models.find((m) => m.id === mid);
         },
+
+        setMode: (mode) =>
+          set(() => ({
+            mode,
+          })),
       }),
 
       {

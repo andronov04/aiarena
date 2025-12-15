@@ -5,15 +5,17 @@ import { setPersist } from "@/lib/cookies/client";
 import { shallow } from "zustand/vanilla/shallow";
 
 export const useExamples = () => {
-  const { showExamples, examples, setShowExamples, setInput } = useAppStore(
-    (s) => ({
-      showExamples: s.showExamples,
-      examples: s.examples,
-      setShowExamples: s.setShowExamples,
-      setInput: s.setInput,
-    }),
-    shallow,
-  );
+  const { showExamples, examples, setShowExamples, setInput, setMode } =
+    useAppStore(
+      (s) => ({
+        showExamples: s.showExamples,
+        examples: s.examples,
+        setShowExamples: s.setShowExamples,
+        setInput: s.setInput,
+        setMode: s.setMode,
+      }),
+      shallow,
+    );
 
   const { clearGenerations, replaceGenerations } = useGenerationStore(
     (s) => ({
@@ -36,8 +38,9 @@ export const useExamples = () => {
     if (currentExample) {
       replaceGenerations(currentExample.items);
       setInput(currentExample.input);
+      setMode(currentExample.mode);
     }
-  }, [showExamples, currentExample, replaceGenerations, setInput]);
+  }, [showExamples, currentExample, replaceGenerations, setInput, setMode]);
 
   const goToExample = useCallback(
     (index: number) => {

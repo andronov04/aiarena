@@ -7,7 +7,11 @@ import { Model, Provider } from "@/lib/schemas/models";
 import { AppProvider } from "@/lib/providers/appProvider";
 import { loadSearchParams } from "./search-params";
 import type { SearchParams } from "nuqs/server";
-import { GenerationStatus, ModelGeneration } from "@/types/generation";
+import {
+  ArenaMode,
+  GenerationStatus,
+  ModelGeneration,
+} from "@/types/generation";
 import { generateUUID, sortModels } from "@/lib/utils";
 import { ModalProviders } from "@/components/arena/modals/ModalProviders";
 import { ModalModels } from "@/components/arena/modals/ModalModels";
@@ -59,11 +63,13 @@ export default async function Page({
     (await getPersist("showExamples", true)) && !DISABLE_EXAMPLES;
 
   const generations: ModelGeneration[] = [];
+  let mode: ArenaMode = "web";
   const examples = await fetchData<ExampleGeneration[]>("examples.json");
   if (isShowExamples) {
     const example = examples[0];
     if (example) {
       input = example.input;
+      mode = example.mode;
       example.items.forEach((item) => {
         generations.push(item as any);
       });
@@ -104,6 +110,7 @@ export default async function Page({
           input: input,
           showExamples: isShowExamples,
           examples,
+          mode,
         }}
       >
         <GenerationProvider

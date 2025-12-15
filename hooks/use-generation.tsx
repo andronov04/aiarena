@@ -7,19 +7,20 @@ import {
 import { getModelExecutor } from "@/lib/ai/providers";
 import { useAppStore } from "@/lib/providers/appProvider";
 import { shallow } from "zustand/vanilla/shallow";
-import { SYSTEM_INSTRUCTION_WEB } from "@/lib/constants";
 import { stripMarkdownFences } from "@/lib/utils";
+import { SYSTEM_INSTRUCTIONS_BY_MODE } from "@/lib/defaults";
 
 export const useGeneration = () => {
   const api = useGenerationStoreApi();
   const generations = useGenerationStore((s) => s.generations);
 
-  const { providers, input, instructions, providerEnvs } = useAppStore(
+  const { providers, input, instructions, providerEnvs, mode } = useAppStore(
     (s) => ({
       providers: s.providers,
       input: s.input,
       instructions: s.instructions,
       providerEnvs: s.providerEnvs,
+      mode: s.mode,
     }),
     shallow,
   );
@@ -62,7 +63,10 @@ export const useGeneration = () => {
     try {
       const response = await executor.doGenerate({
         prompt: [
-          { role: "system", content: instructions || SYSTEM_INSTRUCTION_WEB },
+          {
+            role: "system",
+            content: instructions || SYSTEM_INSTRUCTIONS_BY_MODE[mode],
+          },
           { role: "user", content: [{ type: "text", text: input }] },
         ],
         abortSignal: ac.signal,

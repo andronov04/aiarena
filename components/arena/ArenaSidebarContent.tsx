@@ -9,6 +9,7 @@ import { PlusIcon } from "lucide-react";
 import { ModelSidebarItem } from "@/components/arena/ModelSidebarItem";
 import { Textarea } from "@/components/ui/textarea";
 import { useGenerationStore } from "@/lib/providers/generationProvider";
+import { ArenaModeToggle } from "@/components/arena/ArenaModeToggle";
 
 export const ArenaSidebarContent = () => {
   // const [, setInputQuery] = useQueryState("input");
@@ -28,6 +29,9 @@ export const ArenaSidebarContent = () => {
 
   return (
     <div className="space-y-2 mt-2 md:px-0 px-2">
+      <div>
+        <ArenaModeToggle />
+      </div>
       <div className="pb-2">
         <Textarea
           value={input}
