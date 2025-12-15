@@ -32,11 +32,11 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                   <img
                     className="w-full h-full dark:invert"
                     src={"/icon.svg"}
-                    alt="Airena"
+                    alt="AI Arena"
                   />
                 </div>
                 <div className="grid flex-1 text-left text-sm leading-tight">
-                  <span className="truncate font-bold">Airena</span>
+                  <span className="truncate font-bold">AI Arena</span>
                   <span className="truncate text-xs text-muted-foreground">
                     AI Model Arena
                   </span>

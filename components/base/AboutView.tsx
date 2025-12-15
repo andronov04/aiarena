@@ -25,10 +25,10 @@ export const AboutView = () => {
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>Airena</DialogTitle>
+          <DialogTitle>AI Arena</DialogTitle>
           <DialogDescription className="space-y-2">
             <p>
-              Airena is a client-side AI battleground for comparing{" "}
+              AI Arena is a client-side AI battleground for comparing{" "}
               <a
                 className="underline"
                 target="_blank"

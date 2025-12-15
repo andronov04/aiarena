@@ -32,7 +32,7 @@ export const ArenaApp = () => {
         </div>
         <div className="pr-4 flex gap-1 items-center">
           <AboutView />
-          <a target="_blank" href={"https://github.com/andronov04/airena"}>
+          <a target="_blank" href={"https://github.com/andronov04/aiarena"}>
             <Button variant={"ghost"} className="cursor-pointer">
               <GithubIcon size={18} />
             </Button>

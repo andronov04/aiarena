@@ -20,7 +20,7 @@ import { ExampleGeneration } from "@/types/example";
 import { fetchData } from "@/lib/fetch";
 
 export const metadata: Metadata = {
-  title: "Airena - AI Model Comparison Arena",
+  title: "AI Arena - AI Model Comparison Arena",
   description:
     "Compare 1000+ AI models across 68+ providers side-by-side. Client-side battleground for benchmarking LLMs with no backend—your API keys stay private.",
 };

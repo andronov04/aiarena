@@ -1,12 +1,12 @@
-# Airena (AI Arena)
+# AI Arena
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 **The ultimate client-side LLM battleground.**
 
-Airena is a powerful, open-source interface for comparing AI models side-by-side. Run prompts across **68+ providers** and **1000+ models** (including local LLMs) simultaneously to benchmark performance, speed, and quality.
+AI Arena is a powerful, open-source interface for comparing AI models side-by-side. Run prompts across **68+ providers** and **1000+ models** (including local LLMs) simultaneously to benchmark performance, speed, and quality.
 
-**[Live Demo](https://arena.jit.dev) • [Report Bug](https://github.com/andronov04/airena/issues) • [Request Feature](https://github.com/andronov04/airena/issues)**
+**[Live Demo](https://arena.jit.dev) • [Report Bug](https://github.com/andronov04/aiarena/issues) • [Request Feature](https://github.com/andronov04/aiarena/issues)**
 
 ---
 
@@ -25,7 +25,7 @@ _Analyze latency and output quality side-by-side._
 ## ✨ Key Features
 
 - **🤯 Massive Model Support:** Access over **1000+ models** from **68 providers** (OpenAI, Anthropic, Google, Grok, Mistral, and many more).
-- **🔒 Client-Side Architecture (No Backend):** Airena is a frontend-only application. Your API keys and prompts are sent **directly** from your browser to the AI providers. No middleman server, no data logging, enhanced privacy.
+- **🔒 Client-Side Architecture (No Backend):** AI Arena is a frontend-only application. Your API keys and prompts are sent **directly** from your browser to the AI providers. No middleman server, no data logging, enhanced privacy.
 - **⚔️ Flexible Comparison:**
   - **Cross-Model:** Compare GPT-4 vs. Claude 3.5 vs. Gemini 1.5.
   - **Cross-Provider:** Compare the same model (e.g., Llama 3) hosted on different providers (Groq vs. Fireworks vs. Local) to test latency and token speed.
@@ -34,7 +34,7 @@ _Analyze latency and output quality side-by-side._
 
 ## 🏗️ Tech Stack
 
-Airena is built on top of the following open-source projects:
+AI Arena is built on top of the following open-source projects:
 
 - **[Vercel AI SDK](https://github.com/vercel/ai):** Powers the unified API interface and real-time streaming capabilities.
 - **[models.dev](https://github.com/sst/models.dev):** The comprehensive registry used to source the 68+ providers and 1000+ models available in the app.
@@ -53,8 +53,8 @@ You can use the hosted version at **[arena.jit.dev](https://arena.jit.dev)** or 
 1.  **Clone the repository:**
 
     ```bash
-    git clone [https://github.com/andronov04/airena.git](https://github.com/andronov04/airena.git)
-    cd airena
+    git clone [https://github.com/andronov04/aiarena.git](https://github.com/andronov04/aiarena.git)
+    cd aiarena
     ```
 
 2.  **Install dependencies:**
